@@ -22,13 +22,21 @@ app.get("/", (req, res) => {
 
 io.on("connection", (socket) => {
   socket.emit("me", socket.id);
+
   socket.on("disconnect", () => {
-    socket.broadcast.emit("callEnded");
+    socket.broadcast.emit("callended");
   });
-  socket.on("calluser", ({ userToCallID, siganlData, from, name }) => {
-    io.to(userToCallID).emit("calluser", { signal: siganlData, from, name });
+
+  socket.on("calluser", ({ userToCallID, signalData, from, name }) => {
+    if (signalData) {
+      console.log("receiving...", userToCallID, from, name);
+    } else {
+      console.log(null, userToCallID, from, name);
+    }
+    io.to(userToCallID).emit("calluser", { signal: signalData, from, name });
   });
-  socket.on("ansercall", (data) => {
+
+  socket.on("answercall", (data) => {
     io.to(data.to).emit("callaccepted", data.signal);
   });
 });
