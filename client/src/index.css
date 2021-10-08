@@ -84,3 +84,15 @@ body {
   padding-left: 10px;
   margin: 5px;
 }
+.okButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: #4db6ac;
+  border: 2px solid black;
+}

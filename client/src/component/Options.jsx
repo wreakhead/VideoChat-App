@@ -62,7 +62,6 @@ export default function Options() {
               placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              fullWidth
             />
             <input
               className="inputModal"
@@ -70,8 +69,10 @@ export default function Options() {
               placeholder="ID to call"
               value={idToCall}
               onChange={(e) => setIdToCall(e.target.value)}
-              fullWidth
             />
+            <button className="okButton" onClick={handleClose} type="submit">
+              ok
+            </button>
           </Box>
         </Modal>
       </div>

@@ -27,7 +27,7 @@ export default function VideoChat(props) {
     useContext(SocketContext);
 
   const classes = useStyles();
-  console.log(props);
+
   return (
     <>
       <Grid container className={classes.gridContainer}>
