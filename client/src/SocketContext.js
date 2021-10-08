@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import Peer from "simple-peer";
 
 const SocketContext = createContext();
-const socket = io("http://localhost:7000/");
+const socket = io("http://35.238.81.161:8080/");
 
 const ContextProvider = ({ children }) => {
   const [mute, setMute] = useState(false);
